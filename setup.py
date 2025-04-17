@@ -4,8 +4,7 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md") as f:
     readme = f.read()
@@ -23,7 +22,8 @@ setup(
     ],
     long_description=readme,
     long_description_content_type="text/markdown",
-    setup_requires=["setuptools>=18.0",],
+    packages=['blink', 'elq', 'img', 'elq_slurm_scripts'],  # 👈 explicitly list top-level packages
+    setup_requires=["setuptools>=18.0"],
     install_requires=[
         "torch>=1.2.0",
         "pysolr>=3.8.1",

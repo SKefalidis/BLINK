@@ -2,17 +2,6 @@
 from setuptools import setup, find_packages
 import os
 
-# Automatically add __init__.py to all directories missing it
-def add_init_files():
-    for root, dirs, files in os.walk("."):
-        # Only add __init__.py to folders that contain Python files but lack it
-        if "__init__.py" not in files and any(f.endswith(".py") for f in files):
-            with open(os.path.join(root, "__init__.py"), "w"):
-                pass
-
-# Call this function before running setup
-add_init_files()
-
 # Read the README file for the long description
 with open("README.md") as f:
     readme = f.read()

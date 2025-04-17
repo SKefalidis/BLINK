@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-# Copyright (c) Facebook, Inc. and its affiliates.
-#
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
-
 from setuptools import setup, find_packages
 
 with open("README.md") as f:
@@ -22,7 +17,7 @@ setup(
     ],
     long_description=readme,
     long_description_content_type="text/markdown",
-    packages=['blink', 'elq', 'img', 'elq_slurm_scripts'],  # 👈 explicitly list top-level packages
+    packages=find_packages(),  # 👈 includes all packages & subpackages
     setup_requires=["setuptools>=18.0"],
     install_requires=[
         "torch>=1.2.0",
